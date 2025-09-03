@@ -1,3 +1,4 @@
+// Cambio mínimo para forzar despliegue en Vercel
 import AnimatedRobot from './assets/components/AnimatedRobot';
 import Modal from 'react-modal';
 import React, { useState, useRef } from 'react';
