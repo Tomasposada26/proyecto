@@ -5,7 +5,7 @@ html, body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   background: #fff;
   box-sizing: border-box;
-  overflow: hidden !important;
+  overflow-y: auto !important;
 }
 
 .no-scroll {
