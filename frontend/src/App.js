@@ -55,6 +55,7 @@ function App() {
   const [showVerify, setShowVerify] = useState(false);
   const [showEmailVerify, setShowEmailVerify] = useState(false);
   // ...existing code...
+  // Cambio menor para forzar despliegue
   const { t } = useTranslation();
 
   // Contexts & hooks

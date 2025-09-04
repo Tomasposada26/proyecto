@@ -12,7 +12,13 @@ const reglaRoutes = require('./routes/regla');
 const interesadoRoutes = require('./routes/interesado');
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({
+  origin: [
+    'https://proyecto-eight-eta.vercel.app',
+    'https://proyecto-tz4k.onrender.com'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Conectar a la base de datos
@@ -27,6 +33,7 @@ app.use('/api', interesadoRoutes);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000;
+// Cambio menor para forzar despliegue
 app.listen(PORT, () => {
   console.log(`Servidor backend de Aura escuchando en puerto ${PORT} `);
 });
