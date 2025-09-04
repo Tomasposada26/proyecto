@@ -41,11 +41,11 @@ export function AuthProvider({ children }) {
         }
         return;
       }
-      const resUser = await fetch(`/api/usuario/info?usuario=${encodeURIComponent(data.usuario || form.usuario)}`);
+  const resUser = await fetch(process.env.REACT_APP_API_URL + `/api/usuario/info?usuario=${encodeURIComponent(data.usuario || form.usuario)}`);
       let userData = await resUser.json();
       setUser(userData);
       setTimeout(async () => {
-        const resUser2 = await fetch(`/api/usuario/info?usuario=${encodeURIComponent(data.usuario || form.usuario)}`);
+  const resUser2 = await fetch(process.env.REACT_APP_API_URL + `/api/usuario/info?usuario=${encodeURIComponent(data.usuario || form.usuario)}`);
         const userData2 = await resUser2.json();
         setUser(userData2);
       }, 500);
