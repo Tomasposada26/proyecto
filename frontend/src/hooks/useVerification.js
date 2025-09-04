@@ -9,7 +9,7 @@ export function useVerification() {
   const handleVerify = async (code, setShowVerify, toast) => {
     setVerifyError('');
     try {
-      const res = await fetch('/api/verificar', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/verificar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ correo: pendingEmail, codigo: code })

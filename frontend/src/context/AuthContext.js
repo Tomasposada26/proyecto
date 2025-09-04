@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
   const handleLogin = async (form, setShowLogin, setShowEmailVerify, setPanelActivo, toast) => {
     setLoginError('');
     try {
-      const res = await fetch('/api/login', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ usuario: form.usuario, contrasena: form.contrasena })
@@ -63,7 +63,7 @@ export function AuthProvider({ children }) {
   const handleRegister = async (data, setShowRegister, setShowVerify, toast) => {
     setRegisterError('');
     try {
-      const res = await fetch('/api/registro', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/registro', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

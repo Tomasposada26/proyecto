@@ -81,7 +81,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, errorMsg, onOpenRecovery, onOpen
     setLoading(true);
     // Llamada al backend para login
     try {
-      const res = await fetch('/api/login', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ usuario: form.usuario, contrasena: form.contrasena })

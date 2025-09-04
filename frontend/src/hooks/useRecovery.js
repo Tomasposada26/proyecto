@@ -11,7 +11,7 @@ export function useRecovery() {
     setRecoveryError('');
     setRecoveryEmail(email);
     try {
-      const res = await fetch('/api/recovery', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/recovery', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
@@ -37,7 +37,7 @@ export function useRecovery() {
     setRecoveryError('');
     setRecoveryCode(code);
     try {
-      const res = await fetch('/api/recovery/verify', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/recovery/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: recoveryEmail, code })
@@ -73,7 +73,7 @@ export function useRecovery() {
       return;
     }
     try {
-      const res = await fetch('/api/recovery/reset', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/recovery/reset', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: recoveryEmail, code: recoveryCode, password })

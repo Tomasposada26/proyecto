@@ -37,7 +37,7 @@ const ProfileModal = ({ open, onClose, user }) => {
   const handleSave = async () => {
     // Solo nombre y apellidos se envían al backend
     try {
-      await fetch('/api/usuario/update', {
+  await fetch(process.env.REACT_APP_API_URL + '/api/usuario/update', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

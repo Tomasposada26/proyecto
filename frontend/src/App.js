@@ -78,7 +78,7 @@ function App() {
   const handleVerify = async (code) => {
     setVerifyError('');
     try {
-      const res = await fetch('/api/verificar', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/verificar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ correo: pendingEmail, codigo: code })
@@ -106,7 +106,7 @@ function App() {
     const handler = async (e) => {
       const correo = e.detail;
       try {
-        const res = await fetch('/api/reenviar-codigo', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/reenviar-codigo', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ correo })
@@ -899,7 +899,7 @@ function App() {
                             return;
                           }
                           try {
-                            const res = await fetch('/api/interesados', {
+                            const res = await fetch(process.env.REACT_APP_API_URL + '/api/interesados', {
                               method: 'POST',
                               headers: { 'Content-Type': 'application/json' },
                               body: JSON.stringify({ email })
@@ -973,7 +973,7 @@ function App() {
               onSubmit={async email => {
                 setPendingEmail(email);
                 try {
-                  const res = await fetch('/api/reenviar-verificacion', {
+                  const res = await fetch(process.env.REACT_APP_API_URL + '/api/reenviar-verificacion', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ correo: email })

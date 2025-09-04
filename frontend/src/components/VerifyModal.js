@@ -26,7 +26,7 @@ const VerifyModal = ({ isOpen, onClose, onVerify, correo, errorMsg }) => {
     setTimer(60);
     setInputs(['', '', '', '', '', '']);
     try {
-      const res = await fetch('/api/reenviar-verificacion', {
+  const res = await fetch(process.env.REACT_APP_API_URL + '/api/reenviar-verificacion', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ correo })
