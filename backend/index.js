@@ -15,7 +15,9 @@ const app = express();
 app.use(cors({
   origin: [
     'https://proyecto-eight-eta.vercel.app',
-    'https://proyecto-tz4k.onrender.com'
+    'https://proyecto-tz4k.onrender.com',
+  'https://proyecto-git-main-tomas0626s-projects.vercel.app',
+  'https://proyecto-bmzhfdyo7-tomas0626s-projects.vercel.app'
   ],
   credentials: true
 }));
